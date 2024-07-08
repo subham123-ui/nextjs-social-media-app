@@ -2,7 +2,16 @@
 const nextConfig = {
   experimental: {
     reactCompiler: true,
-    ppr: 'incremental'
+    ppr: "incremental",
+  },
+  images: {
+    // domains: ['www.pexels.com'],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.pexels.com",
+      },
+    ],
   },
 };
 
