@@ -14,7 +14,7 @@ const Navbar = () => {
     <div className="h-24 flex items-center justify-between">
       {/* LEFT */}
       <div className="md:hidden lg:block w-[20%]">
-        <Link href="/" className="font-bold text-xl text-blue-500">
+        <Link href="/" className="font-bold text-2xl text-blue-500">
           SOCIOSCROLLS
         </Link>
       </div>
