@@ -12,7 +12,7 @@ const Comments = () => {
           width={32}
           className="w-8 h-8 rounded-full"
         />
-        <div className="flex items-center justify-between bg-slate-100 rounded-xl text-sm px-6 py-2 w-full">
+        <div className="flex-1 flex items-center justify-between bg-slate-100 rounded-xl text-sm px-6 py-2 w-full">
           <input
             type="text"
             placeholder="Write a comment..."
