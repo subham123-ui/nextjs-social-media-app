@@ -28,7 +28,51 @@ const Comments = () => {
         </div>
       </div>
       {/* COMMENTS */}
-      <div className=""></div>
+      <div className="">
+        {/* COMMENT */}
+        <div className="flex gap-4 justify-between mt-6">
+          {/* AVATAR */}
+          <Image
+            src="https://images.pexels.com/photos/14913583/pexels-photo-14913583.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+            alt=""
+            width={40}
+            height={40}
+            className="w-10 h-10 rounded-full"
+          />
+          {/* DESC */}
+          <div className="flex flex-col gap-2 flex-1">
+            <span className="font-medium">Tony Stark</span>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias,
+              doloremque nesciunt. Illum, eligendi? Sapiente iste minima
+              aperiam. Eveniet odit tempore velit ducimus delectus accusantium
+              voluptates, eos amet ipsa magni vel.
+            </p>
+            <div className="flex items-center gap-8 text-xs text-gray-500 mt-2">
+              <div className="flex items-center gap-4">
+                <Image
+                  src="/like.png"
+                  alt=""
+                  width={12}
+                  height={12}
+                  className="cursor-pointer w-4 h-4"
+                />
+                <span className="text-gray-300">|</span>
+                <span className="text-gray-500">146 Likes</span>
+              </div>
+              <div className="">Reply</div>
+            </div>
+          </div>
+          {/* ICON */}
+          <Image
+            src="/more.png"
+            alt=""
+            width={16}
+            height={16}
+            className="cursor-pointer w-4 h-4"
+          />
+        </div>
+      </div>
     </div>
   );
 };
