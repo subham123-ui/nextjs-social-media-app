@@ -1,6 +1,6 @@
 import Ad from "./Ad";
-import Birthdays from "./Birthdays";
 import FriendRequests from "./FriendRequests";
+import Birthdays from "./rightMenu/Birthdays";
 
 const RightMenu = ({ userId }: { userId?: string }) => {
   return (
