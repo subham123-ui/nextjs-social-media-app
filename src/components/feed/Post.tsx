@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Comments from "./feed/Comments";
+import Comments from "./Comments";
 
 const Post = () => {
   return (
