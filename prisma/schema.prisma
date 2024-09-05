@@ -9,12 +9,12 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "mongodb"
   url      = env("DATABASE_URL")
 }
 
 model User {
-  id                     String          @id
+  id                     String          @id @map("_id")
   username               String          @unique
   avatar                 String?
   cover                  String?
@@ -39,7 +39,7 @@ model User {
 }
 
 model Post {
-  id        Int       @id @default(autoincrement())
+  id        Int       @id @map("_id")
   desc      String
   img       String?
   createdAt DateTime  @default(now())
@@ -51,7 +51,7 @@ model Post {
 }
 
 model Comment {
-  id        Int      @id @default(autoincrement())
+  id        Int      @id @map("_id")
   desc      String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -63,7 +63,7 @@ model Comment {
 }
 
 model Like {
-  id        Int      @id @default(autoincrement())
+  id        Int      @id @map("_id")
   createdAt DateTime @default(now())
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId    String
@@ -74,7 +74,7 @@ model Like {
 }
 
 model Follower {
-  id          Int      @id @default(autoincrement())
+  id          Int      @id @map("_id")
   createdAt   DateTime @default(now())
   follower    User     @relation("UserFollowers", fields: [followerId], references: [id], onDelete: Cascade)
   followerId  String
@@ -83,7 +83,7 @@ model Follower {
 }
 
 model FollowRequest {
-  id         Int      @id @default(autoincrement())
+  id         Int      @id @map("_id")
   createdAt  DateTime @default(now())
   sender     User     @relation("FollowRequestsSent", fields: [senderId], references: [id], onDelete: Cascade)
   senderId   String
@@ -94,7 +94,7 @@ model FollowRequest {
 }
 
 model Block {
-  id        Int      @id @default(autoincrement())
+  id        Int      @id @map("_id")
   createdAt DateTime @default(now())
   blocker   User     @relation("BlocksSent", fields: [blockerId], references: [id], onDelete: Cascade)
   blockerId String
@@ -105,7 +105,7 @@ model Block {
 }
 
 model Story {
-  id        Int      @id @default(autoincrement())
+  id        Int      @id @map("_id")
   createdAt DateTime @default(now())
   expiresAt DateTime
   img       String
