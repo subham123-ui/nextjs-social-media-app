@@ -1,15 +1,29 @@
-import Ad from "./Ad";
+import { User } from "@prisma/client";
+// import Ad from "../Ad";
+// import Birthdays from "./Birthdays";
 import FriendRequests from "./FriendRequests";
-import Birthdays from "./rightMenu/Birthdays";
 import UserInfoCard from "./UserInfoCard";
+import UserMediaCard from "./UserMediaCard";
+import { Suspense } from "react";
+import Birthdays from "./rightMenu/Birthdays";
+import Ad from "./Ad";
 
-const RightMenu = ({ userId }: { userId?: string }) => {
+const RightMenu = ({ user }: { user?: User }) => {
   return (
     <div className="flex flex-col gap-6">
-      <UserInfoCard userId=""/>
+      {user ? (
+        <>
+          <Suspense fallback="loading...">
+            <UserInfoCard user={user} />
+          </Suspense>
+          <Suspense fallback="loading...">
+            <UserMediaCard user={user} />
+          </Suspense>
+        </>
+      ) : null}
       <FriendRequests />
-      <Birthdays/>
-      <Ad size="lg"/>
+      <Birthdays />
+      <Ad size="md" />
     </div>
   );
 };
