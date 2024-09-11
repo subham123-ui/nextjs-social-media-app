@@ -43,6 +43,7 @@ export const switchFollow = async (userId: string) => {
       } else {
         await prisma.followRequest.create({
           data: {
+
             senderId: currentUserId,
             receiverId: userId,
           },
@@ -79,6 +80,7 @@ export const switchBlock = async (userId: string) => {
     } else {
       await prisma.block.create({
         data: {
+          
           blockerId: currentUserId,
           blockedId: userId,
         },
